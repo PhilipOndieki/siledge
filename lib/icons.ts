@@ -1,0 +1,72 @@
+import {
+  BadgeCheck,
+  Boxes,
+  Cpu,
+  CircleDot,
+  ClipboardCheck,
+  Disc,
+  Droplet,
+  Factory,
+  Flame,
+  Gauge,
+  HardHat,
+  Handshake,
+  Headphones,
+  Layers,
+  Link2,
+  Mountain,
+  MoveHorizontal,
+  Package,
+  Settings2,
+  ShieldCheck,
+  Smile,
+  Tag,
+  Truck,
+  UtensilsCrossed,
+  Waves,
+  Wheat,
+  Wind,
+  Wrench,
+  Zap,
+  type LucideIcon,
+} from "lucide-react";
+
+export const iconRegistry = {
+  "circle-dot": CircleDot,
+  droplet: Droplet,
+  waves: Waves,
+  wind: Wind,
+  "link-2": Link2,
+  disc: Disc,
+  "move-horizontal": MoveHorizontal,
+  cpu: Cpu,
+  "shield-check": ShieldCheck,
+  gauge: Gauge,
+  handshake: Handshake,
+  boxes: Boxes,
+  "badge-check": BadgeCheck,
+  tag: Tag,
+  headphones: Headphones,
+  truck: Truck,
+  smile: Smile,
+  wrench: Wrench,
+  "settings-2": Settings2,
+  zap: Zap,
+  "clipboard-check": ClipboardCheck,
+  layers: Layers,
+  factory: Factory,
+  wheat: Wheat,
+  "hard-hat": HardHat,
+  "utensils-crossed": UtensilsCrossed,
+  mountain: Mountain,
+  flame: Flame,
+  package: Package,
+} as const satisfies Record<string, LucideIcon>;
+
+export type IconName = keyof typeof iconRegistry;
+
+export const iconNames: readonly string[] = Object.keys(iconRegistry);
+
+export function isIconName(value: string): value is IconName {
+  return Object.prototype.hasOwnProperty.call(iconRegistry, value);
+}

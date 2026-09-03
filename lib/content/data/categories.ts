@@ -1,0 +1,98 @@
+export const categoriesData = [
+  {
+    slug: "bearings",
+    name: "Bearings",
+    order: 1,
+    tagline: "Precision, Durability, Performance",
+    attributes: ["Precision", "Durability", "Performance"],
+    description:
+      "Ball, roller, and thrust bearings specified for the loads, speeds, and duty cycles of manufacturing and processing equipment.",
+    icon: "circle-dot",
+    featured: true,
+    image: null,
+  },
+  {
+    slug: "oil-seals",
+    name: "Oil Seals",
+    order: 2,
+    tagline: "Leak protection, Long life",
+    attributes: ["Leak protection", "Long life"],
+    description:
+      "Rotary shaft seals that keep lubricant in and contaminants out, across automotive, industrial, and agricultural applications.",
+    icon: "droplet",
+    featured: true,
+    image: null,
+  },
+  {
+    slug: "hydraulic-seals",
+    name: "Hydraulic Seals",
+    order: 3,
+    tagline: "High pressure, High performance",
+    attributes: ["High pressure", "High performance"],
+    description:
+      "Rod, piston, and wiper seals for hydraulic cylinders operating under sustained high-pressure cycles.",
+    icon: "waves",
+    featured: true,
+    image: null,
+  },
+  {
+    slug: "pneumatic-seals",
+    name: "Pneumatic Seals",
+    order: 4,
+    tagline: "Reliable, Efficient, Leak free",
+    attributes: ["Reliable", "Efficient", "Leak free"],
+    description:
+      "Seals and O-rings for pneumatic cylinders and actuators, built to hold pressure through millions of cycles.",
+    icon: "wind",
+    featured: true,
+    image: null,
+  },
+  {
+    slug: "chains-sprockets",
+    name: "Chains & Sprockets",
+    order: 5,
+    tagline: "Strong, Durable, Efficient",
+    attributes: ["Strong", "Durable", "Efficient"],
+    description:
+      "Roller and conveyor chains matched to sprockets for reliable power transmission on production and material-handling lines.",
+    icon: "link-2",
+    featured: true,
+    image: null,
+  },
+  {
+    slug: "pulleys",
+    name: "Pulleys",
+    order: 6,
+    tagline: "Precision, Balance, Efficiency",
+    attributes: ["Precision", "Balance", "Efficiency"],
+    description:
+      "Taper lock, V-belt, and timing pulleys machined for balanced, low-vibration operation at rated speeds.",
+    icon: "disc",
+    featured: true,
+    image: null,
+  },
+  {
+    slug: "belts",
+    name: "Belts",
+    order: 7,
+    tagline: "High quality, Long lasting",
+    attributes: ["High quality", "Long lasting"],
+    description:
+      "V-belts, timing belts, and conveyor belts engineered for consistent power transfer under industrial load.",
+    icon: "move-horizontal",
+    featured: true,
+    image: null,
+  },
+  {
+    slug: "automation-systems",
+    name: "Automation Systems",
+    order: 8,
+    tagline: "Smart solutions, Reliable control",
+    attributes: ["Smart solutions", "Reliable control"],
+    description:
+      "Sensors, control panels, and drive components for automating and monitoring industrial processes.",
+    icon: "cpu",
+    featured: true,
+    image: null,
+  },
+];
