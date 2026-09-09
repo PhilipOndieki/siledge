@@ -1,12 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { m } from "framer-motion";
 import { Container } from "@/components/primitives/Container";
 import { Button } from "@/components/primitives/Button";
+import { BackgroundVideo } from "@/components/patterns/BackgroundVideo";
 import { fadeUp, heroStagger } from "@/lib/motion";
-
-const HERO_POSTER = "/images/hero-poster.jpg";
 
 export type HomeHeroProps = {
   ctaLabel: string;
@@ -49,51 +47,13 @@ function HeroPattern() {
 }
 
 export function HomeHero({ ctaLabel }: HomeHeroProps) {
-  const [videoReady, setVideoReady] = useState(false);
-
-  useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      return;
-    }
-
-    // Defer the video fetch until the browser is idle so it never competes
-    // with the fonts/JS the initial paint depends on. The poster image
-    // covers the gap and doubles as the fallback for reduced-motion users.
-    const requestIdle =
-      typeof window.requestIdleCallback === "function"
-        ? window.requestIdleCallback
-        : (cb: () => void) => window.setTimeout(cb, 200);
-    const cancelIdle =
-      typeof window.cancelIdleCallback === "function"
-        ? window.cancelIdleCallback
-        : window.clearTimeout;
-
-    const handle = requestIdle(() => setVideoReady(true));
-    return () => cancelIdle(handle as number);
-  }, []);
-
   return (
     <section className="relative flex min-h-[max(560px,78vh)] items-center overflow-hidden bg-gradient-to-br from-siledge-ink to-siledge-blueDeep py-24 md:min-h-[max(560px,82vh)]">
-      <div
-        className="absolute inset-0 h-full w-full bg-cover bg-center"
-        style={{ backgroundImage: `url(${HERO_POSTER})` }}
-        aria-hidden="true"
+      <BackgroundVideo
+        poster="/images/hero-poster.jpg"
+        webmSrc="/videos/hero.webm"
+        mp4Src="/videos/hero.mp4"
       />
-      {videoReady ? (
-        <video
-          className="absolute inset-0 h-full w-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="none"
-          poster={HERO_POSTER}
-          aria-hidden="true"
-        >
-          <source src="/videos/hero.webm" type="video/webm" />
-          <source src="/videos/hero.mp4" type="video/mp4" />
-        </video>
-      ) : null}
       <HeroPattern />
       <div className="absolute inset-0 bg-siledge-blue/40" aria-hidden="true" />
       <Container className="relative z-10">

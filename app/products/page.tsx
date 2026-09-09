@@ -22,6 +22,9 @@ export default function ProductsPage() {
       <PageHero
         heading="Our Products"
         supportingLine="Genuine industrial components, organised by category and ready to specify."
+        videoPoster="/images/products-poster.jpg"
+        videoWebmSrc="/videos/products.webm"
+        videoMp4Src="/videos/products.mp4"
       />
       <Section tone="mist">
         <Container>

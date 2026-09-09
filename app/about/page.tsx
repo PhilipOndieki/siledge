@@ -24,7 +24,13 @@ export default function AboutPage() {
 
   return (
     <>
-      <PageHero heading="About Siledge" supportingLine={company.tagline} />
+      <PageHero
+        heading="About Siledge"
+        supportingLine={company.tagline}
+        videoPoster="/images/about-poster.jpg"
+        videoWebmSrc="/videos/about.webm"
+        videoMp4Src="/videos/about.mp4"
+      />
 
       <Section tone="white">
         <Container>
