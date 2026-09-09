@@ -28,6 +28,8 @@ export default function ContactPage() {
         videoPoster="/images/contact-poster.jpg"
         videoWebmSrc="/videos/contact.webm"
         videoMp4Src="/videos/contact.mp4"
+        videoPortraitWebmSrc="/videos/contact-portrait.webm"
+        videoPortraitMp4Src="/videos/contact-portrait.mp4"
       />
 
       <Section tone="mist">

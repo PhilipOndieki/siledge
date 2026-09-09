@@ -14,6 +14,8 @@ export type PageHeroProps = {
   videoPoster?: string;
   videoWebmSrc?: string;
   videoMp4Src?: string;
+  videoPortraitWebmSrc?: string;
+  videoPortraitMp4Src?: string;
 };
 
 export function PageHero({
@@ -23,6 +25,8 @@ export function PageHero({
   videoPoster,
   videoWebmSrc,
   videoMp4Src,
+  videoPortraitWebmSrc,
+  videoPortraitMp4Src,
 }: PageHeroProps) {
   const hasVideo = videoPoster && videoWebmSrc && videoMp4Src;
 
@@ -35,7 +39,13 @@ export function PageHero({
       )}
     >
       {hasVideo ? (
-        <BackgroundVideo poster={videoPoster} webmSrc={videoWebmSrc} mp4Src={videoMp4Src} />
+        <BackgroundVideo
+          poster={videoPoster}
+          webmSrc={videoWebmSrc}
+          mp4Src={videoMp4Src}
+          portraitWebmSrc={videoPortraitWebmSrc}
+          portraitMp4Src={videoPortraitMp4Src}
+        />
       ) : null}
       <div
         className={cn("absolute inset-0 bg-siledge-blue/20", hasVideo && "bg-siledge-blue/40")}

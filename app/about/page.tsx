@@ -30,6 +30,8 @@ export default function AboutPage() {
         videoPoster="/images/about-poster.jpg"
         videoWebmSrc="/videos/about.webm"
         videoMp4Src="/videos/about.mp4"
+        videoPortraitWebmSrc="/videos/about-portrait.webm"
+        videoPortraitMp4Src="/videos/about-portrait.mp4"
       />
 
       <Section tone="white">

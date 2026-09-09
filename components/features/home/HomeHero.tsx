@@ -53,6 +53,8 @@ export function HomeHero({ ctaLabel }: HomeHeroProps) {
         poster="/images/hero-poster.jpg"
         webmSrc="/videos/hero.webm"
         mp4Src="/videos/hero.mp4"
+        portraitWebmSrc="/videos/hero-portrait.webm"
+        portraitMp4Src="/videos/hero-portrait.mp4"
       />
       <HeroPattern />
       <div className="absolute inset-0 bg-siledge-blue/40" aria-hidden="true" />

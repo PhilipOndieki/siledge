@@ -6,9 +6,17 @@ export type BackgroundVideoProps = {
   poster: string;
   webmSrc: string;
   mp4Src: string;
+  portraitWebmSrc?: string;
+  portraitMp4Src?: string;
 };
 
-export function BackgroundVideo({ poster, webmSrc, mp4Src }: BackgroundVideoProps) {
+export function BackgroundVideo({
+  poster,
+  webmSrc,
+  mp4Src,
+  portraitWebmSrc,
+  portraitMp4Src,
+}: BackgroundVideoProps) {
   const [videoReady, setVideoReady] = useState(false);
 
   useEffect(() => {
@@ -50,6 +58,12 @@ export function BackgroundVideo({ poster, webmSrc, mp4Src }: BackgroundVideoProp
           poster={poster}
           aria-hidden="true"
         >
+          {portraitWebmSrc ? (
+            <source media="(max-width: 767px)" src={portraitWebmSrc} type="video/webm" />
+          ) : null}
+          {portraitMp4Src ? (
+            <source media="(max-width: 767px)" src={portraitMp4Src} type="video/mp4" />
+          ) : null}
           <source src={webmSrc} type="video/webm" />
           <source src={mp4Src} type="video/mp4" />
         </video>
