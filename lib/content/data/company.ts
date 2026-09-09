@@ -36,6 +36,11 @@ export const companyData = {
     { title: "Timely delivery", icon: "truck" },
     { title: "Customer satisfaction", icon: "smile" },
   ],
+  qualityStatement: {
+    heading: "Quality You Can Trust",
+    left: "Siledge Industrial Solutions Ltd is a dynamic, reliable supplier of industrial products and engineering solutions across East Africa. Every bearing, seal, and transmission component we distribute is genuine and verified before it ships, giving manufacturing, agricultural, and transport operators the durability and performance their operations depend on.",
+    right: "Our team specifies parts for the loads and cycles they will actually see, then backs every order with technical support and timely delivery. It is the same team, on every order, for the life of the relationship, building the kind of long-term partnerships that keep client operations running without interruption.",
+  },
   contact: {
     physicalAddress: ["Mwanzo House, Dunga Close Road", "Nairobi, Kenya"],
     postalAddress: ["P.O. Box 102096 - 00100", "Nairobi, Kenya"],

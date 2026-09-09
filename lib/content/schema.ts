@@ -62,6 +62,11 @@ export const companySchema = z.object({
       }),
     )
     .length(6),
+  qualityStatement: z.object({
+    heading: z.string().min(2),
+    left: z.string().min(20),
+    right: z.string().min(20),
+  }),
   contact: z.object({
     physicalAddress: z.array(z.string()),
     postalAddress: z.array(z.string()),

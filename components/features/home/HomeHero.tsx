@@ -48,7 +48,7 @@ function HeroPattern() {
 
 export function HomeHero({ ctaLabel }: HomeHeroProps) {
   return (
-    <section className="relative flex min-h-[max(560px,78vh)] items-center overflow-hidden bg-gradient-to-br from-siledge-ink to-siledge-blueDeep py-24 md:min-h-[max(560px,82vh)]">
+    <section className="relative flex min-h-[max(560px,78vh)] items-center overflow-hidden bg-gradient-to-br from-siledge-ink to-siledge-blueDeep pb-32 pt-24 md:min-h-[max(560px,82vh)] md:pb-40">
       <BackgroundVideo
         poster="/images/hero-poster.jpg"
         webmSrc="/videos/hero.webm"

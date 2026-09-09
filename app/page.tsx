@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 import { HomeHero } from "@/components/features/home/HomeHero";
-import { PillarBand } from "@/components/features/home/PillarBand";
 import { CategoryGrid } from "@/components/features/categories/CategoryGrid";
 import { IndustriesBand } from "@/components/features/home/IndustriesBand";
 import { AboutPreview } from "@/components/features/home/AboutPreview";
 import { ServicesStrip } from "@/components/features/home/ServicesStrip";
-import { TrustBand } from "@/components/features/home/TrustBand";
+import { QualityTrustSection } from "@/components/features/home/QualityTrustSection";
 import { ClosingCta } from "@/components/features/home/ClosingCta";
 import { Section } from "@/components/primitives/Section";
 import { Container } from "@/components/primitives/Container";
 import { Heading } from "@/components/primitives/Heading";
 import { Reveal } from "@/components/primitives/Reveal";
+import { slideUpAttach } from "@/lib/motion";
 import {
   getCategories,
   getCompany,
@@ -37,11 +37,26 @@ export default function HomePage() {
     <>
       <HomeHero ctaLabel={ui.hero.ctaLabel} />
 
+      <Reveal
+        className="relative z-10 -mt-10 sm:-mt-14 md:-mt-20"
+        variants={slideUpAttach}
+        amount={0.15}
+      >
+        <Container>
+          <div className="bg-siledge-mist px-6 py-10 shadow-cardHover md:px-12 md:py-14">
+            <Heading level={2} className="mb-10 text-center">
+              Industries We Serve
+            </Heading>
+            <Reveal stagger>
+              <IndustriesBand industries={industries} />
+            </Reveal>
+          </div>
+        </Container>
+      </Reveal>
+
       <Section tone="mist">
         <Container>
-          <Reveal stagger>
-            <PillarBand pillars={company.pillars} />
-          </Reveal>
+          <QualityTrustSection statement={company.qualityStatement} />
         </Container>
       </Section>
 
@@ -61,24 +76,13 @@ export default function HomePage() {
 
       <Section tone="mist">
         <Container>
-          <Reveal className="mb-10 text-center">
-            <Heading level={2}>Industries We Serve</Heading>
-          </Reveal>
-          <Reveal stagger>
-            <IndustriesBand industries={industries} />
-          </Reveal>
-        </Container>
-      </Section>
-
-      <Section tone="white">
-        <Container>
           <Reveal>
             <AboutPreview paragraph={company.overview[0] ?? ""} companyName={company.shortName} />
           </Reveal>
         </Container>
       </Section>
 
-      <Section tone="mist">
+      <Section tone="white">
         <Container>
           <Reveal className="mb-10 text-center">
             <Heading level={2}>Our Services</Heading>
@@ -89,15 +93,7 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      <Section tone="dark">
-        <Container>
-          <Reveal stagger>
-            <TrustBand trustPoints={company.trustPoints} />
-          </Reveal>
-        </Container>
-      </Section>
-
-      <Section tone="white">
+      <Section tone="mist">
         <Reveal>
           <ClosingCta phones={company.contact.phones} />
         </Reveal>

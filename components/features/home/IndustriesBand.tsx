@@ -1,4 +1,3 @@
-import { Icon } from "@/components/primitives/Icon";
 import type { Industry } from "@/lib/content/schema";
 
 export type IndustriesBandProps = {
@@ -7,14 +6,12 @@ export type IndustriesBandProps = {
 
 export function IndustriesBand({ industries }: IndustriesBandProps) {
   return (
-    <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
+    <div className="flex flex-wrap justify-center gap-x-10 gap-y-8">
       {industries.map((industry) => (
-        <div
-          key={industry.id}
-          className="flex flex-col items-center gap-3 rounded-lg border border-siledge-blue/10 bg-white p-6 text-center shadow-card"
-        >
-          <Icon name={industry.icon} className="h-7 w-7 text-siledge-blue" />
-          <p className="text-sm font-medium text-siledge-ink">{industry.name}</p>
+        <div key={industry.id} className="flex w-24 flex-col items-center gap-3 text-center">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={`/icons/${industry.id}.svg`} alt="" aria-hidden="true" className="h-14 w-14" />
+          <p className="text-sm font-semibold leading-tight text-siledge-blue">{industry.name}</p>
         </div>
       ))}
     </div>
