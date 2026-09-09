@@ -18,11 +18,20 @@ export function BackgroundVideo({
   portraitMp4Src,
 }: BackgroundVideoProps) {
   const [videoReady, setVideoReady] = useState(false);
+  const [isPortrait, setIsPortrait] = useState(false);
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       return;
     }
+
+    // Pick portrait vs. landscape ourselves instead of relying on
+    // <source media="..."> — Safari has a long history of unreliably
+    // evaluating the `media` attribute on <video><source> (unlike
+    // <picture><source>, where every browser handles it consistently),
+    // which can lead to the wrong orientation loading silently. Doing the
+    // check in JS means every browser runs the exact same logic.
+    setIsPortrait(window.matchMedia("(max-width: 767px)").matches);
 
     // Defer the video fetch until the browser is idle so it never competes
     // with the fonts/JS the initial paint depends on. The poster image
@@ -40,6 +49,10 @@ export function BackgroundVideo({
     return () => cancelIdle(handle as number);
   }, []);
 
+  const usePortrait = isPortrait && portraitWebmSrc && portraitMp4Src;
+  const activeWebmSrc = usePortrait ? portraitWebmSrc : webmSrc;
+  const activeMp4Src = usePortrait ? portraitMp4Src : mp4Src;
+
   return (
     <>
       <div
@@ -54,18 +67,12 @@ export function BackgroundVideo({
           muted
           loop
           playsInline
-          preload="none"
+          preload="metadata"
           poster={poster}
           aria-hidden="true"
         >
-          {portraitWebmSrc ? (
-            <source media="(max-width: 767px)" src={portraitWebmSrc} type="video/webm" />
-          ) : null}
-          {portraitMp4Src ? (
-            <source media="(max-width: 767px)" src={portraitMp4Src} type="video/mp4" />
-          ) : null}
-          <source src={webmSrc} type="video/webm" />
-          <source src={mp4Src} type="video/mp4" />
+          <source src={activeWebmSrc} type="video/webm" />
+          <source src={activeMp4Src} type="video/mp4" />
         </video>
       ) : null}
     </>
