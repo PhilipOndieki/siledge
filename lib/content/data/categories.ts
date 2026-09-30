@@ -12,16 +12,16 @@ export const categoriesData = [
     image: "/images/bearings/deepgroovebearing.webp",
   },
   {
-    slug: "oil-seals",
-    name: "Oil Seals",
+    slug: "seals",
+    name: "Seals",
     order: 2,
     tagline: "Leak protection, Long life",
     attributes: ["Leak protection", "Long life"],
     description:
-      "Rotary shaft seals that keep lubricant in and contaminants out, across automotive, industrial, and agricultural applications.",
+      "Oil, hydraulic, mechanical, and pneumatic seals, plus O-rings, that keep lubricant in and contaminants out across industrial and automotive applications.",
     icon: "droplet",
     featured: true,
-    image: "/images/oilseals/o-ringskit.webp",
+    image: "/images/seals/hydraulicseal.jpg",
   },
   {
     slug: "pulleys",

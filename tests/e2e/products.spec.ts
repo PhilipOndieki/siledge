@@ -12,13 +12,13 @@ test.describe("Products page", () => {
     await expect(page.getByText("Taper Lock Pulleys").first()).toBeVisible();
   });
 
-  test("a deep link to /products#oil-seals opens with that category active", async ({ page }) => {
-    await page.goto("/products#oil-seals");
+  test("a deep link to /products#seals opens with that category active", async ({ page }) => {
+    await page.goto("/products#seals");
 
-    await expect(page.getByRole("button", { name: /Oil Seals/ })).toHaveAttribute(
+    await expect(page.getByRole("button", { name: /Seals/ })).toHaveAttribute(
       "aria-pressed",
       "true",
     );
-    await expect(page.getByText("TC Oil Seals").first()).toBeVisible();
+    await expect(page.getByText("Hydraulic Seals").first()).toBeVisible();
   });
 });
