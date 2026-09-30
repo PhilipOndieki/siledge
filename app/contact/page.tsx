@@ -6,7 +6,7 @@ import { SplitSection } from "@/components/patterns/SplitSection";
 import { Reveal } from "@/components/primitives/Reveal";
 import { ContactForm } from "@/components/features/contact/ContactForm";
 import { ContactInfoCard } from "@/components/features/contact/ContactInfoCard";
-import { MapPlaceholder } from "@/components/features/contact/MapPlaceholder";
+import { LocationMap } from "@/components/features/contact/LocationMap";
 import { getCompany } from "@/lib/content/queries";
 import { buildMetadata } from "@/lib/seo";
 
@@ -46,7 +46,7 @@ export default function ContactPage() {
       <Section tone="white">
         <Container>
           <Reveal>
-            <MapPlaceholder addressLabel={company.contact.physicalAddress.join(", ")} />
+            <LocationMap contact={company.contact} />
           </Reveal>
         </Container>
       </Section>
