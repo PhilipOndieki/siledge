@@ -70,7 +70,7 @@ export const companyData = {
   contact: {
     physicalAddress: ["Mwanzo House, Dunga Close Road", "Nairobi, Kenya"],
     postalAddress: ["P.O. Box 102096 - 00100", "Nairobi, Kenya"],
-    phones: ["+254 713 712 696", "+254 701 506 941"],
+    phones: ["+254 118 531 126", "+254 701 506 941"],
     emails: ["info@siledge.co.ke", "siledgelimited@gmail.com"],
     website: "https://www.siledge.co.ke",
     geo: null,
