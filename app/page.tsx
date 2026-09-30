@@ -3,7 +3,7 @@ import { HomeHero } from "@/components/features/home/HomeHero";
 import { CategoryGrid } from "@/components/features/categories/CategoryGrid";
 import { IndustriesBand } from "@/components/features/home/IndustriesBand";
 import { AboutPreview } from "@/components/features/home/AboutPreview";
-import { ServicesStrip } from "@/components/features/home/ServicesStrip";
+import { FieldSupportShowcase } from "@/components/features/home/FieldSupportShowcase";
 import { QualityTrustSection } from "@/components/features/home/QualityTrustSection";
 import { ClosingCta } from "@/components/features/home/ClosingCta";
 import { Section } from "@/components/primitives/Section";
@@ -11,13 +11,7 @@ import { Container } from "@/components/primitives/Container";
 import { Heading } from "@/components/primitives/Heading";
 import { Reveal } from "@/components/primitives/Reveal";
 import { slideUpAttach } from "@/lib/motion";
-import {
-  getCategories,
-  getCompany,
-  getIndustries,
-  getServices,
-  getUiCopy,
-} from "@/lib/content/queries";
+import { getCategories, getCompany, getIndustries, getUiCopy } from "@/lib/content/queries";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
@@ -30,7 +24,6 @@ export default function HomePage() {
   const company = getCompany();
   const categories = getCategories();
   const industries = getIndustries();
-  const services = getServices();
   const ui = getUiCopy();
 
   return (
@@ -54,17 +47,22 @@ export default function HomePage() {
         </Container>
       </Reveal>
 
-      <Section tone="mist">
+      <Section tone="white" size="xl">
         <Container>
           <QualityTrustSection statement={company.qualityStatement} />
         </Container>
       </Section>
 
-      <Section tone="white">
+      <Section tone="mist" size="xl">
         <Container>
-          <Reveal className="mb-10 text-center">
-            <Heading level={2}>Product Categories</Heading>
-            <p className="mx-auto mt-3 max-w-prose text-siledge-slate">
+          <Reveal className="mb-24 text-center flex flex-col items-center">
+            <Heading
+              level={2}
+              className="inline-block border-b-[3px] border-blue-800 pb-3 text-4xl md:text-5xl"
+            >
+              Product Categories
+            </Heading>
+            <p className="mx-auto mt-8 max-w-prose text-lg leading-relaxed text-siledge-slate md:text-xl">
               Eight core categories, stocked and specified for industrial duty.
             </p>
           </Reveal>
@@ -74,7 +72,7 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      <Section tone="mist">
+      <Section tone="white" size="xl">
         <Container>
           <Reveal>
             <AboutPreview paragraph={company.overview[0] ?? ""} companyName={company.shortName} />
@@ -82,20 +80,17 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      <Section tone="white">
+      <Section tone="mist" size="xl">
         <Container>
-          <Reveal className="mb-10 text-center">
-            <Heading level={2}>Our Services</Heading>
-          </Reveal>
-          <Reveal stagger>
-            <ServicesStrip services={services} />
+          <Reveal>
+            <FieldSupportShowcase fieldSupport={company.fieldSupport} />
           </Reveal>
         </Container>
       </Section>
 
-      <Section tone="mist">
+      <Section size="xl" className="bg-siledge-blue">
         <Reveal>
-          <ClosingCta phones={company.contact.phones} />
+          <ClosingCta closingCta={company.closingCta} />
         </Reveal>
       </Section>
     </>

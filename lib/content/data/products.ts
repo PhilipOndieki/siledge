@@ -5,7 +5,7 @@ export const productsData = [
     name: "Deep Groove Ball Bearings",
     categorySlug: "bearings",
     blurb: null,
-    image: null,
+    image: "/images/bearings/deepgroovebearing.webp",
     specs: {},
   },
   {
@@ -13,7 +13,7 @@ export const productsData = [
     name: "Cylindrical Roller Bearings",
     categorySlug: "bearings",
     blurb: null,
-    image: null,
+    image: "/images/bearings/cylindricalrollerbearing.webp",
     specs: {},
   },
   {
@@ -21,7 +21,7 @@ export const productsData = [
     name: "Tapered Roller Bearings",
     categorySlug: "bearings",
     blurb: null,
-    image: null,
+    image: "/images/bearings/tapperedrollerbearing.webp",
     specs: {},
   },
   {
@@ -29,7 +29,7 @@ export const productsData = [
     name: "Spherical Roller Bearings",
     categorySlug: "bearings",
     blurb: null,
-    image: null,
+    image: "/images/bearings/sphericalrollerbearings.webp",
     specs: {},
   },
   {
@@ -37,7 +37,7 @@ export const productsData = [
     name: "Cam Follower Bearings",
     categorySlug: "bearings",
     blurb: null,
-    image: null,
+    image: "/images/bearings/camfollowerbearing.webp",
     specs: {},
   },
   {
@@ -45,7 +45,7 @@ export const productsData = [
     name: "Pillow Block Bearings",
     categorySlug: "bearings",
     blurb: null,
-    image: null,
+    image: "/images/bearings/pillowblockbearing.webp",
     specs: {},
   },
   {
@@ -53,7 +53,7 @@ export const productsData = [
     name: "Thrust Bearings",
     categorySlug: "bearings",
     blurb: null,
-    image: null,
+    image: "/images/bearings/thrustbearings.webp",
     specs: {},
   },
   {
@@ -61,7 +61,7 @@ export const productsData = [
     name: "Adapter Withdrawal Sleeve",
     categorySlug: "bearings",
     blurb: null,
-    image: null,
+    image: "/images/bearings/adapterwithdrawalsleeve.webp",
     specs: {},
   },
 
@@ -131,171 +131,13 @@ export const productsData = [
     specs: {},
   },
 
-  // Hydraulic Seals
-  {
-    id: "rod-seals",
-    name: "Rod Seals",
-    categorySlug: "hydraulic-seals",
-    blurb: null,
-    image: null,
-    specs: {},
-  },
-  {
-    id: "piston-seals",
-    name: "Piston Seals",
-    categorySlug: "hydraulic-seals",
-    blurb: null,
-    image: null,
-    specs: {},
-  },
-  {
-    id: "wiper-seals",
-    name: "Wiper Seals",
-    categorySlug: "hydraulic-seals",
-    blurb: null,
-    image: null,
-    specs: {},
-  },
-  {
-    id: "backup-rings",
-    name: "Backup Rings",
-    categorySlug: "hydraulic-seals",
-    blurb: null,
-    image: null,
-    specs: {},
-  },
-  {
-    id: "un-hydraulic-seals",
-    name: "UN Hydraulic Seals",
-    categorySlug: "hydraulic-seals",
-    blurb: null,
-    image: null,
-    specs: {},
-  },
-  {
-    id: "wear-rings",
-    name: "Wear Rings",
-    categorySlug: "hydraulic-seals",
-    blurb: null,
-    image: null,
-    specs: {},
-  },
-  {
-    id: "hydraulic-cylinder-repair-kits",
-    name: "Hydraulic Cylinder Repair Kits",
-    categorySlug: "hydraulic-seals",
-    blurb: null,
-    image: null,
-    specs: {},
-  },
-
-  // Pneumatic Seals
-  {
-    id: "o-rings",
-    name: "O-Rings",
-    categorySlug: "pneumatic-seals",
-    blurb: null,
-    image: null,
-    specs: {},
-  },
-  {
-    id: "combination-gaskets",
-    name: "Combination Gaskets",
-    categorySlug: "pneumatic-seals",
-    blurb: null,
-    image: null,
-    specs: {},
-  },
-  {
-    id: "u-cups",
-    name: "U-Cups",
-    categorySlug: "pneumatic-seals",
-    blurb: null,
-    image: null,
-    specs: {},
-  },
-  {
-    id: "guide-rings",
-    name: "Guide Rings",
-    categorySlug: "pneumatic-seals",
-    blurb: null,
-    image: null,
-    specs: {},
-  },
-  {
-    id: "rotary-seals",
-    name: "Rotary Seals",
-    categorySlug: "pneumatic-seals",
-    blurb: null,
-    image: null,
-    specs: {},
-  },
-  {
-    id: "cushion-seals",
-    name: "Cushion Seals",
-    categorySlug: "pneumatic-seals",
-    blurb: null,
-    image: null,
-    specs: {},
-  },
-
-  // Chains & Sprockets
-  {
-    id: "roller-chains",
-    name: "Roller Chains",
-    categorySlug: "chains-sprockets",
-    blurb: null,
-    image: null,
-    specs: {},
-  },
-  {
-    id: "conveyor-chains",
-    name: "Conveyor Chains",
-    categorySlug: "chains-sprockets",
-    blurb: null,
-    image: null,
-    specs: {},
-  },
-  {
-    id: "duplex-chains",
-    name: "Duplex Chains",
-    categorySlug: "chains-sprockets",
-    blurb: null,
-    image: null,
-    specs: {},
-  },
-  {
-    id: "simplex-chains",
-    name: "Simplex Chains",
-    categorySlug: "chains-sprockets",
-    blurb: null,
-    image: null,
-    specs: {},
-  },
-  {
-    id: "taper-lock-sprockets",
-    name: "Taper Lock Sprockets",
-    categorySlug: "chains-sprockets",
-    blurb: null,
-    image: null,
-    specs: {},
-  },
-  {
-    id: "pilot-bore-sprockets",
-    name: "Pilot Bore Sprockets",
-    categorySlug: "chains-sprockets",
-    blurb: null,
-    image: null,
-    specs: {},
-  },
-
   // Pulleys
   {
     id: "taper-lock-pulleys",
     name: "Taper Lock Pulleys",
     categorySlug: "pulleys",
     blurb: null,
-    image: null,
+    image: "/images/pulleys/taperlockpulley.webp",
     specs: {},
   },
   {
@@ -303,7 +145,7 @@ export const productsData = [
     name: "V-Belt Pulleys",
     categorySlug: "pulleys",
     blurb: null,
-    image: null,
+    image: "/images/pulleys/v-beltpulley.webp",
     specs: {},
   },
   {
@@ -311,7 +153,7 @@ export const productsData = [
     name: "Timing Pulleys",
     categorySlug: "pulleys",
     blurb: null,
-    image: null,
+    image: "/images/pulleys/timingpulley.webp",
     specs: {},
   },
   {
@@ -319,7 +161,7 @@ export const productsData = [
     name: "Flat Belt Pulleys",
     categorySlug: "pulleys",
     blurb: null,
-    image: null,
+    image: "/images/pulleys/flatbeltpulley.webp",
     specs: {},
   },
   {
@@ -327,18 +169,25 @@ export const productsData = [
     name: "Idler Pulleys",
     categorySlug: "pulleys",
     blurb: null,
-    image: null,
+    image: "/images/pulleys/idlerpulley.webp",
     specs: {},
   },
 
   // Belts
-  { id: "v-belts", name: "V-Belts", categorySlug: "belts", blurb: null, image: null, specs: {} },
+  {
+    id: "v-belts",
+    name: "V-Belts",
+    categorySlug: "belts",
+    blurb: null,
+    image: "/images/belts/v-belt.webp",
+    specs: {},
+  },
   {
     id: "timing-belts",
     name: "Timing Belts",
     categorySlug: "belts",
     blurb: null,
-    image: null,
+    image: "/images/belts/timingbelt.webp",
     specs: {},
   },
   {
@@ -346,7 +195,7 @@ export const productsData = [
     name: "Wedge Belts",
     categorySlug: "belts",
     blurb: null,
-    image: null,
+    image: "/images/belts/wedgebelt.webp",
     specs: {},
   },
   {
@@ -354,7 +203,7 @@ export const productsData = [
     name: "Flat Belts",
     categorySlug: "belts",
     blurb: null,
-    image: null,
+    image: "/images/belts/flatbelts.webp",
     specs: {},
   },
   {
@@ -362,7 +211,7 @@ export const productsData = [
     name: "Ribbed Belts",
     categorySlug: "belts",
     blurb: null,
-    image: null,
+    image: "/images/belts/ribbedbelt.webp",
     specs: {},
   },
   {
@@ -370,7 +219,7 @@ export const productsData = [
     name: "Conveyor Belts",
     categorySlug: "belts",
     blurb: null,
-    image: null,
+    image: "/images/belts/conveyorbelt.webp",
     specs: {},
   },
 
@@ -380,7 +229,7 @@ export const productsData = [
     name: "Sensors",
     categorySlug: "automation-systems",
     blurb: null,
-    image: null,
+    image: "/images/automationsystem/sensors.webp",
     specs: {},
   },
   {
@@ -388,7 +237,7 @@ export const productsData = [
     name: "Control Panels",
     categorySlug: "automation-systems",
     blurb: null,
-    image: null,
+    image: "/images/automationsystem/controlpanel.webp",
     specs: {},
   },
   {
@@ -396,7 +245,7 @@ export const productsData = [
     name: "Actuators",
     categorySlug: "automation-systems",
     blurb: null,
-    image: null,
+    image: "/images/automationsystem/actuator.webp",
     specs: {},
   },
   {
@@ -404,7 +253,7 @@ export const productsData = [
     name: "Variable Frequency Drives",
     categorySlug: "automation-systems",
     blurb: null,
-    image: null,
+    image: "/images/automationsystem/variablefrequencydrive.webp",
     specs: {},
   },
   {
@@ -412,7 +261,7 @@ export const productsData = [
     name: "PLC Units",
     categorySlug: "automation-systems",
     blurb: null,
-    image: null,
+    image: "/images/automationsystem/plcunit.webp",
     specs: {},
   },
   {
@@ -420,7 +269,7 @@ export const productsData = [
     name: "Solenoid Valves",
     categorySlug: "automation-systems",
     blurb: null,
-    image: null,
+    image: "/images/automationsystem/solenoidvalve.webp",
     specs: {},
   },
 ];

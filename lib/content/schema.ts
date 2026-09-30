@@ -67,6 +67,15 @@ export const companySchema = z.object({
     left: z.string().min(20),
     right: z.string().min(20),
   }),
+  fieldSupport: z.object({
+    heading: z.string().min(2),
+    paragraph: z.string().min(20),
+    ctaLabel: z.string().min(2),
+  }),
+  closingCta: z.object({
+    heading: z.string().min(2),
+    ctaLabel: z.string().min(2),
+  }),
   contact: z.object({
     physicalAddress: z.array(z.string()),
     postalAddress: z.array(z.string()),

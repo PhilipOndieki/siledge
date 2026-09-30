@@ -8,7 +8,7 @@ export type CategoryGridProps = {
 
 export function CategoryGrid({ categories }: CategoryGridProps) {
   return (
-    <CardGrid columns={4}>
+    <CardGrid columns={3} className="gap-8 lg:gap-10">
       {categories.map((category) => (
         <CategoryCard key={category.slug} category={category} />
       ))}

@@ -4,7 +4,7 @@ import { cn } from "@/lib/cn";
 export type SectionProps = {
   children: ReactNode;
   className?: string;
-  size?: "sm" | "md" | "lg";
+  size?: "sm" | "md" | "lg" | "xl";
   tone?: "mist" | "white" | "dark";
   as?: "section" | "div";
   id?: string;
@@ -14,6 +14,7 @@ const sizeClass = {
   sm: "py-10 md:py-14",
   md: "py-16 md:py-20",
   lg: "py-20 md:py-28",
+  xl: "py-16 md:flex md:min-h-[100dvh] md:flex-col md:justify-center md:py-32 lg:py-40",
 } as const;
 
 const toneClass = {

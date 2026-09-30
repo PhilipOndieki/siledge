@@ -21,7 +21,7 @@ describe("content queries", () => {
 
   it("getCategories returns all categories sorted by order", () => {
     const categories = getCategories();
-    expect(categories.length).toBe(8);
+    expect(categories.length).toBe(5);
     for (let i = 1; i < categories.length; i += 1) {
       const prev = categories[i - 1];
       const curr = categories[i];
