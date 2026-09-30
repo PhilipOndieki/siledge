@@ -75,6 +75,22 @@ export const companySchema = z.object({
   closingCta: z.object({
     heading: z.string().min(2),
     ctaLabel: z.string().min(2),
+    href: z.string().min(1),
+  }),
+  aboutClosingCta: z.object({
+    heading: z.string().min(2),
+    ctaLabel: z.string().min(2),
+    href: z.string().min(1),
+  }),
+  servicesOverview: z.object({
+    heading: z.string().min(2),
+    left: z.string().min(20),
+    right: z.string().min(20),
+  }),
+  whyChooseUs: z.object({
+    heading: z.string().min(2),
+    left: z.string().min(20),
+    right: z.string().min(20),
   }),
   contact: z.object({
     physicalAddress: z.array(z.string()),

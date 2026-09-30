@@ -5,7 +5,7 @@ import { IndustriesBand } from "@/components/features/home/IndustriesBand";
 import { AboutPreview } from "@/components/features/home/AboutPreview";
 import { FieldSupportShowcase } from "@/components/features/home/FieldSupportShowcase";
 import { QualityTrustSection } from "@/components/features/home/QualityTrustSection";
-import { ClosingCta } from "@/components/features/home/ClosingCta";
+import { ClosingCta } from "@/components/patterns/ClosingCta";
 import { Section } from "@/components/primitives/Section";
 import { Container } from "@/components/primitives/Container";
 import { Heading } from "@/components/primitives/Heading";
@@ -88,7 +88,7 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      <Section size="xl" className="bg-siledge-blue">
+      <Section size="lg" className="bg-siledge-blue">
         <Reveal>
           <ClosingCta closingCta={company.closingCta} />
         </Reveal>

@@ -3,12 +3,14 @@ import { PageHero } from "@/components/patterns/PageHero";
 import { Section } from "@/components/primitives/Section";
 import { Container } from "@/components/primitives/Container";
 import { Heading } from "@/components/primitives/Heading";
-import { Button } from "@/components/primitives/Button";
+import Image from "next/image";
 import { Reveal } from "@/components/primitives/Reveal";
+import { SplitSection } from "@/components/patterns/SplitSection";
+import { ClosingCta } from "@/components/patterns/ClosingCta";
 import { VisionMissionCards } from "@/components/features/about/VisionMissionCards";
-import { TrustPointsGrid } from "@/components/features/about/TrustPointsGrid";
-import { ServiceGrid } from "@/components/features/services/ServiceGrid";
-import { getCompany, getServices } from "@/lib/content/queries";
+import { ServicesOverview } from "@/components/features/about/ServicesOverview";
+import { WhyChooseUsOverview } from "@/components/features/about/WhyChooseUsOverview";
+import { getCompany } from "@/lib/content/queries";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
@@ -20,7 +22,6 @@ export const metadata: Metadata = buildMetadata({
 
 export default function AboutPage() {
   const company = getCompany();
-  const services = getServices();
 
   return (
     <>
@@ -34,17 +35,39 @@ export default function AboutPage() {
         videoPortraitMp4Src="/videos/about-portrait.mp4"
       />
 
-      <Section tone="white">
+      <Section tone="white" size="xl">
         <Container>
-          <Reveal className="mx-auto max-w-prose space-y-4 text-siledge-slate">
-            {company.overview.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
+          <Reveal>
+            <SplitSection
+              left={
+                <div>
+                  <Heading level={2} tone="blue" className="text-4xl md:text-5xl">
+                    Who We Are
+                  </Heading>
+                  <div className="mt-6 space-y-4 text-lg leading-relaxed text-siledge-slate md:text-xl">
+                    {company.overview.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
+                  </div>
+                </div>
+              }
+              right={
+                <div className="relative mx-auto aspect-[3/4] h-[min(82vh,42rem)] w-auto overflow-hidden rounded-lg bg-siledge-mist">
+                  <Image
+                    src="/images/aboutsiledge.jpg"
+                    alt="Siledge bearing and lubricant, representing our product quality"
+                    fill
+                    sizes="(min-width: 1024px) 40vw, 90vw"
+                    className="object-cover"
+                  />
+                </div>
+              }
+            />
           </Reveal>
         </Container>
       </Section>
 
-      <Section tone="mist">
+      <Section tone="mist" size="xl">
         <Container>
           <Reveal stagger>
             <VisionMissionCards vision={company.vision} mission={company.mission} />
@@ -52,38 +75,26 @@ export default function AboutPage() {
         </Container>
       </Section>
 
-      <Section tone="white">
+      <Section tone="white" size="xl">
         <Container>
-          <Reveal className="mb-10 text-center">
-            <Heading level={2}>Our Services</Heading>
-          </Reveal>
-          <Reveal stagger>
-            <ServiceGrid services={services} />
+          <Reveal>
+            <ServicesOverview servicesOverview={company.servicesOverview} />
           </Reveal>
         </Container>
       </Section>
 
-      <Section tone="mist">
+      <Section tone="mist" size="xl">
         <Container>
-          <Reveal className="mb-10 text-center">
-            <Heading level={2}>Why Choose Us</Heading>
-          </Reveal>
-          <Reveal stagger>
-            <TrustPointsGrid trustPoints={company.trustPoints} />
+          <Reveal>
+            <WhyChooseUsOverview whyChooseUs={company.whyChooseUs} />
           </Reveal>
         </Container>
       </Section>
 
-      <Section tone="white">
-        <Container className="flex flex-col items-center gap-6 text-center">
-          <Reveal className="flex flex-col items-center gap-6">
-            <Heading level={2}>Have a project in mind?</Heading>
-            <p className="max-w-prose text-siledge-slate">
-              Tell us what you need and our team will help you specify the right components.
-            </p>
-            <Button href="/contact">Contact us</Button>
-          </Reveal>
-        </Container>
+      <Section size="lg" className="bg-siledge-blue">
+        <Reveal>
+          <ClosingCta closingCta={company.aboutClosingCta} />
+        </Reveal>
       </Section>
     </>
   );

@@ -14,7 +14,7 @@ export function ClosingCta({ closingCta }: ClosingCtaProps) {
         {closingCta.heading}
       </Heading>
       <div className="h-px w-24 bg-white/40" aria-hidden="true" />
-      <Button href="/about" variant="secondary" withArrow>
+      <Button href={closingCta.href} variant="secondary" withArrow>
         {closingCta.ctaLabel}
       </Button>
     </Container>

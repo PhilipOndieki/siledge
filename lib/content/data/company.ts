@@ -50,6 +50,22 @@ export const companyData = {
   closingCta: {
     heading: "A Partner You Can Count On",
     ctaLabel: "Get to Know Siledge",
+    href: "/about",
+  },
+  aboutClosingCta: {
+    heading: "Have a Project in Mind?",
+    ctaLabel: "Contact Us",
+    href: "/contact",
+  },
+  servicesOverview: {
+    heading: "Our Products and Services",
+    left: "We have built deep expertise in the supply and technical management of quality industrial spares and equipment. Our trained team handles everything from maintenance and mechanical engineering to electrical support, keeping demanding operations running smoothly and systematically.",
+    right: "Client requirements are met from our large current stock, and when a part is not on our shelves, our procurement network sources it through vetted overseas suppliers. Every order is backed by consultation and technical support to make sure the right component reaches the right application.",
+  },
+  whyChooseUs: {
+    heading: "Why Choose Us",
+    left: "We stock a wide range of genuine industrial products, each one quality assured and competitively priced before it reaches a client. That combination of range and verification is what operators rely on when they need a part they can trust.",
+    right: "Every order is backed by responsive technical support and timely delivery, and it is that consistency that keeps our clients satisfied. We measure our success by how well we keep your operations running, not just by what we ship.",
   },
   contact: {
     physicalAddress: ["Mwanzo House, Dunga Close Road", "Nairobi, Kenya"],

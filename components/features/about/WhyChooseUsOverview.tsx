@@ -1,32 +1,30 @@
 import { Reveal } from "@/components/primitives/Reveal";
 import { Heading } from "@/components/primitives/Heading";
 import { slideInFromLeft, slideInFromRight } from "@/lib/motion";
+import type { Company } from "@/lib/content/schema";
 
-export type VisionMissionCardsProps = {
-  vision: string;
-  mission: string;
+export type WhyChooseUsOverviewProps = {
+  whyChooseUs: Company["whyChooseUs"];
 };
 
-export function VisionMissionCards({ vision, mission }: VisionMissionCardsProps) {
+export function WhyChooseUsOverview({ whyChooseUs }: WhyChooseUsOverviewProps) {
   return (
     <div>
       <div className="text-center">
         <Heading level={2} className="text-4xl md:text-5xl">
-          Vision &amp; Mission
+          {whyChooseUs.heading}
         </Heading>
         <div className="mx-auto mt-6 h-1 w-24 rounded-full bg-siledge-blue" aria-hidden="true" />
       </div>
       <div className="mt-16 grid grid-cols-1 gap-8 md:mt-20 md:grid-cols-2 md:gap-10">
         <Reveal variants={slideInFromLeft}>
           <div className="h-full rounded-lg bg-white p-8 shadow-card md:p-10">
-            <h3 className="font-display text-xl font-semibold text-siledge-ink">Our Vision</h3>
-            <p className="mt-4 text-lg leading-relaxed text-siledge-slate">{vision}</p>
+            <p className="text-lg leading-relaxed text-siledge-slate">{whyChooseUs.left}</p>
           </div>
         </Reveal>
         <Reveal variants={slideInFromRight}>
           <div className="h-full rounded-lg bg-white p-8 shadow-card md:p-10">
-            <h3 className="font-display text-xl font-semibold text-siledge-ink">Our Mission</h3>
-            <p className="mt-4 text-lg leading-relaxed text-siledge-slate">{mission}</p>
+            <p className="text-lg leading-relaxed text-siledge-slate">{whyChooseUs.right}</p>
           </div>
         </Reveal>
       </div>
@@ -34,4 +32,4 @@ export function VisionMissionCards({ vision, mission }: VisionMissionCardsProps)
   );
 }
 
-export default VisionMissionCards;
+export default WhyChooseUsOverview;
