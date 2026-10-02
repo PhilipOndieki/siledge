@@ -19,6 +19,7 @@ export default function ProductsPage() {
 
   return (
     <>
+      <link rel="preload" as="video" type="video/mp4" href="/videos/products.mp4" />
       <PageHero
         heading="Our Products"
         supportingLine="Genuine industrial components, organised by category and ready to specify."

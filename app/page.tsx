@@ -28,6 +28,7 @@ export default function HomePage() {
 
   return (
     <>
+      <link rel="preload" as="video" type="video/mp4" href="/videos/hero.mp4" />
       <HomeHero ctaLabel={ui.hero.ctaLabel} />
 
       <Reveal

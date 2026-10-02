@@ -9,14 +9,10 @@ export type BackgroundVideoProps = {
 };
 
 export function BackgroundVideo({ poster, mp4Src, portraitMp4Src }: BackgroundVideoProps) {
-  const [videoReady, setVideoReady] = useState(false);
   const [isPortrait, setIsPortrait] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      return;
-    }
-
     // Pick portrait vs. landscape ourselves instead of relying on
     // <source media="..."> — Safari has a long history of unreliably
     // evaluating the `media` attribute on <video><source> (unlike
@@ -24,21 +20,7 @@ export function BackgroundVideo({ poster, mp4Src, portraitMp4Src }: BackgroundVi
     // which can lead to the wrong orientation loading silently. Doing the
     // check in JS means every browser runs the exact same logic.
     setIsPortrait(window.matchMedia("(max-width: 767px)").matches);
-
-    // Defer the video fetch until the browser is idle so it never competes
-    // with the fonts/JS the initial paint depends on. The poster image
-    // covers the gap and doubles as the fallback for reduced-motion users.
-    const requestIdle =
-      typeof window.requestIdleCallback === "function"
-        ? window.requestIdleCallback
-        : (cb: () => void) => window.setTimeout(cb, 200);
-    const cancelIdle =
-      typeof window.cancelIdleCallback === "function"
-        ? window.cancelIdleCallback
-        : window.clearTimeout;
-
-    const handle = requestIdle(() => setVideoReady(true));
-    return () => cancelIdle(handle as number);
+    setReducedMotion(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
   }, []);
 
   const activeMp4Src = isPortrait && portraitMp4Src ? portraitMp4Src : mp4Src;
@@ -50,20 +32,20 @@ export function BackgroundVideo({ poster, mp4Src, portraitMp4Src }: BackgroundVi
         style={{ backgroundImage: `url(${poster})` }}
         aria-hidden="true"
       />
-      {videoReady ? (
+      {reducedMotion ? null : (
         <video
           className="absolute inset-0 h-full w-full object-cover"
           autoPlay
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="auto"
           poster={poster}
           aria-hidden="true"
         >
           <source src={activeMp4Src} type="video/mp4" />
         </video>
-      ) : null}
+      )}
     </>
   );
 }

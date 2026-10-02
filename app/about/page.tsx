@@ -25,6 +25,7 @@ export default function AboutPage() {
 
   return (
     <>
+      <link rel="preload" as="video" type="video/mp4" href="/videos/about.mp4" />
       <PageHero
         heading="About Siledge"
         supportingLine={company.tagline}

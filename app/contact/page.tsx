@@ -22,6 +22,7 @@ export default function ContactPage() {
 
   return (
     <>
+      <link rel="preload" as="video" type="video/mp4" href="/videos/contact.mp4" />
       <PageHero
         heading="Contact Us"
         supportingLine="Send us a message or reach our team directly using the details below."
