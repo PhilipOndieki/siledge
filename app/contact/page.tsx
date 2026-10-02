@@ -26,9 +26,7 @@ export default function ContactPage() {
         heading="Contact Us"
         supportingLine="Send us a message or reach our team directly using the details below."
         videoPoster="/images/contact-poster.jpg"
-        videoWebmSrc="/videos/contact.webm"
         videoMp4Src="/videos/contact.mp4"
-        videoPortraitWebmSrc="/videos/contact-portrait.webm"
         videoPortraitMp4Src="/videos/contact-portrait.mp4"
       />
 

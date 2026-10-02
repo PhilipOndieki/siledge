@@ -23,9 +23,7 @@ export default function ProductsPage() {
         heading="Our Products"
         supportingLine="Genuine industrial components, organised by category and ready to specify."
         videoPoster="/images/products-poster.jpg"
-        videoWebmSrc="/videos/products.webm"
         videoMp4Src="/videos/products.mp4"
-        videoPortraitWebmSrc="/videos/products-portrait.webm"
         videoPortraitMp4Src="/videos/products-portrait.mp4"
       />
       <Section tone="mist">

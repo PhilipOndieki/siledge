@@ -12,9 +12,7 @@ export type PageHeroProps = {
   supportingLine?: string;
   className?: string;
   videoPoster?: string;
-  videoWebmSrc?: string;
   videoMp4Src?: string;
-  videoPortraitWebmSrc?: string;
   videoPortraitMp4Src?: string;
 };
 
@@ -23,12 +21,10 @@ export function PageHero({
   supportingLine,
   className,
   videoPoster,
-  videoWebmSrc,
   videoMp4Src,
-  videoPortraitWebmSrc,
   videoPortraitMp4Src,
 }: PageHeroProps) {
-  const hasVideo = videoPoster && videoWebmSrc && videoMp4Src;
+  const hasVideo = videoPoster && videoMp4Src;
 
   return (
     <div
@@ -41,9 +37,7 @@ export function PageHero({
       {hasVideo ? (
         <BackgroundVideo
           poster={videoPoster}
-          webmSrc={videoWebmSrc}
           mp4Src={videoMp4Src}
-          portraitWebmSrc={videoPortraitWebmSrc}
           portraitMp4Src={videoPortraitMp4Src}
         />
       ) : null}

@@ -4,19 +4,11 @@ import { useEffect, useState } from "react";
 
 export type BackgroundVideoProps = {
   poster: string;
-  webmSrc: string;
   mp4Src: string;
-  portraitWebmSrc?: string;
   portraitMp4Src?: string;
 };
 
-export function BackgroundVideo({
-  poster,
-  webmSrc,
-  mp4Src,
-  portraitWebmSrc,
-  portraitMp4Src,
-}: BackgroundVideoProps) {
+export function BackgroundVideo({ poster, mp4Src, portraitMp4Src }: BackgroundVideoProps) {
   const [videoReady, setVideoReady] = useState(false);
   const [isPortrait, setIsPortrait] = useState(false);
 
@@ -49,9 +41,7 @@ export function BackgroundVideo({
     return () => cancelIdle(handle as number);
   }, []);
 
-  const usePortrait = isPortrait && portraitWebmSrc && portraitMp4Src;
-  const activeWebmSrc = usePortrait ? portraitWebmSrc : webmSrc;
-  const activeMp4Src = usePortrait ? portraitMp4Src : mp4Src;
+  const activeMp4Src = isPortrait && portraitMp4Src ? portraitMp4Src : mp4Src;
 
   return (
     <>
@@ -71,7 +61,6 @@ export function BackgroundVideo({
           poster={poster}
           aria-hidden="true"
         >
-          <source src={activeWebmSrc} type="video/webm" />
           <source src={activeMp4Src} type="video/mp4" />
         </video>
       ) : null}
